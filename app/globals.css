@@ -1,0 +1,250 @@
+
+/* RGB & Animations */
+.rgb-text {
+  /* Gradient colors */
+  background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff);
+  
+  /* Text ko transparent karke background dikhane ke liye */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Animation settings */
+  background-size: 200% auto;
+  animation: rgbMove 5s infinite linear;
+  
+  /* Optional: Text ko thoda bold rakhein taaki color saaf dikhe */
+  font-weight: bold;
+  display: inline-block; /* Isse animation line par sahi chalti hai */
+}
+
+@keyframes rgbMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.blink-text { animation: blink 1.5s infinite; text-align: center; }
+@keyframes blink { 0%, 100% { opacity: 1; text-shadow: 0 0 20px gold; } 50% { opacity: 0.6; text-shadow: 0 0 40px red; } }
+
+/* Professional Navbar */
+.glass-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 40px; background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky; top: 0; z-index: 100;
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { height: 70px; }
+
+.nav-links { display: flex; gap: 25px; align-items: center; }
+.nav-link { color: #ff4d4d; font-weight: bold; cursor: pointer; background: none; border: none; font-size: 16px; }
+
+/* Hero Section */
+.hero {
+  height: 70vh; display: flex; justify-content: center; align-items: center;
+  background: radial-gradient(circle at top, rgba(255,0,0,0.2), transparent), url('/hero-bg.jpg') center/cover;
+}
+
+/* Products Grid */
+.products {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; padding: 60px 40px; background: #000;
+}
+.product {
+  background: rgba(255,255,255,0.05); border-radius: 15px; padding: 20px;
+  text-align: center; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
+}
+.product:hover { transform: translateY(-10px); border-color: #ff4d4d; box-shadow: 0 10px 30px rgba(255,0,0,0.3); }
+.product img { width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; }
+.product h3 { color: #ff4d4d; margin-bottom: 10px; }
+.product p { color: gold; font-size: 1.2rem; font-weight: bold; }
+
+.add-to-cart {
+  width: 100%; padding: 12px; margin-top: 15px; cursor: pointer;
+  background: linear-gradient(90deg, #ff6a00, #ff4d4d);
+  border: none; color: white; font-weight: bold; border-radius: 25px;
+}
+
+/* Cart Sidebar (Daraz Style) */
+.cart-sidebar {
+  position: fixed; top: 0; right: -400px; width: 350px; height: 100%;
+  background: #fff; z-index: 1000; transition: 0.4s; color: #000;
+  display: flex; flex-direction: column; box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+}
+.cart-sidebar.active { right: 0; }
+.cart-header { background: #ff4d4d; color: #fff; padding: 20px; display: flex; justify-content: space-between; }
+.cart-body { flex: 1; overflow-y: auto; padding: 20px; }
+.cart-item { display: flex; align-items: center; gap: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; }
+.cart-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 5px; }
+.cart-footer { padding: 20px; border-top: 1px solid #eee; }
+.checkout-btn { width: 100%; padding: 15px; background: #25d366; color: white; border: none; font-weight: bold; cursor: pointer; border-radius: 8px; }
+
+.cart-badge {
+  background: red; color: white; border-radius: 50%; padding: 2px 8px;
+  font-size: 12px; position: absolute; top: -10px; right: -15px;
+}
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: none; z-index: 999; }
+.overlay.active { display: block; }
+
+
+
+
+
+/* Custom Scrollbar for Pro Look */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#ff4d4d, #ff6a00); border-radius: 10px; }
+
+body { 
+  margin: 0; font-family: 'Poppins', sans-serif; 
+  color: #fff; background: #050505; overflow-x: hidden; 
+}
+
+/* Glass Buttons with Glow */
+.glass-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.glass-btn:hover {
+  background: rgba(255, 77, 77, 0.8);
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Glass Navbar */
+.glass-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 50px; background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky; top: 0; z-index: 1000;
+}
+
+/* Delivery Form Styling */
+.delivery-form {
+  background: #f8f9fa; padding: 20px; border-radius: 12px;
+  margin-top: 20px; border: 1px solid #ddd;
+}
+.delivery-form input, .delivery-form textarea {
+  width: 100%; padding: 12px; margin-bottom: 10px;
+  border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;
+}
+
+/* Cart Badge Pulse */
+.cart-badge {
+  background: #ff4d4d; color: white; border-radius: 50%; 
+  padding: 2px 8px; font-size: 12px; position: absolute; 
+  top: -10px; right: -15px; animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(255, 77, 77, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+}
+
+/* Product Card Glass Effect */
+/* .product {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px; padding: 15px;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+} */
+  /* .product:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: #ff4d4d;
+  }
+  */
+
+
+
+
+
+
+
+/* ===== Clean Professional Product Card ===== */
+.product {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.35s ease;
+}
+
+/* Subtle Premium Hover */
+.product:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+
+
+
+
+
+/* ===== Premium Pop-Out Product Card ===== */
+.product {
+  position: relative;
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  overflow: hidden;
+}
+
+/* Soft Gradient Glow (Hidden by default) */
+.product::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 77, 77, 0.6),
+    rgba(255, 154, 60, 0.6),
+    rgba(255, 77, 77, 0.6)
+  );
+  opacity: 0;
+  filter: blur(25px);
+  transition: opacity 0.35s ease;
+  z-index: 0;
+}
+
+/* Inner clean layer */
+.product::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: rgba(10, 10, 10, 0.9);
+  border-radius: 18px;
+  z-index: 0;
+}
+
+/* Pop-out hover */
+.product:hover {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.product:hover::before {
+  opacity: 1;
+}
+
+/* Content above glow */
+.product * {
+  position: relative;
+  z-index: 1;
+}
+
+
